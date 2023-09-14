@@ -4,34 +4,32 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-/** ? @type {import('contentlayer/source-files').ComputedFields} */
+/**  @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
-    type: "string",
-    resolve: ({ doc }) => {
-      "/${doc._raw.flattenedPath}";
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
     },
     slugAsParams: {
-      type: "string",
-      resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-    },
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
 };
 
 export const Doc = defineDocumentType(() => ({
-  name: "Doc",
+  name: 'Doc',
   filePathPattern: `blog/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     description: {
-      type: "string",
+      type: 'string',
     },
     published: {
-      type: "boolean",
+      type: 'boolean',
       required: true,
     },
   },
@@ -39,7 +37,7 @@ export const Doc = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "src/content",
+  contentDirPath: 'src/content',
   documentTypes: [Doc],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -48,18 +46,18 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: 'github-dark',
           onVisitLine(node) {
             //Prevent lines from collapsin in `display: grid` mode, and allow empty lines to be copy and pasted
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
+              node.children = [{ type: 'text', value: ' ' }]
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
+            node.properties.className.push('line--highlighted')
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
+            node.properties.className = ['word--highlighted']
           },
         },
       ],
@@ -67,8 +65,8 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ["subheading-anchor"],
-            ariaLabel: "Link to section",
+            className: ['subheading-anchor'],
+            ariaLabel: 'Link to section',
           },
         },
       ],
