@@ -2,7 +2,7 @@ export default function Resume() {
 
     return (
         <>
-           <div> "This is the Resume"
+           <div> &apos;This is the Resume&apos;
            </div>
         </>
     );
