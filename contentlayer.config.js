@@ -30,7 +30,7 @@ export const Doc = defineDocumentType(() => ({
     },
     published: {
       type: 'boolean',
-      required: true,
+      default: true,
     },
   },
   computedFields,
