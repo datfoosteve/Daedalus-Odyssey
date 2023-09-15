@@ -3,7 +3,7 @@
 export default function Homepage() {
     return (
         <>
-           <div> 'This is the Homepage'
+           <div> &apos;This is the Homepage&apos;
            </div>
         </>
     );

@@ -3,7 +3,7 @@
 export default function Blog() {
     return (
         <>
-           <div> 'This is the Blog'
+           <div> &apos;This is the Blog&apos;
            </div>
         </>
     );
