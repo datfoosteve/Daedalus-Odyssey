@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import { prisma } from "@/db";
+import Footer from "src/components/Footer";
+import { prisma } from "src/db";
 import { SignInButton, SignOutButton, currentUser } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 
@@ -7,7 +7,7 @@ function getEntries() {
   return prisma.guestbook.findMany({
     take: 100,
     orderBy: {
-      createdAt: "desc",
+      publishedAt: "desc",
     },
   });
 }
