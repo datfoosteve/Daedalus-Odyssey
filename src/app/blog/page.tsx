@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Footer from "src/components/Footer";
 import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
 
