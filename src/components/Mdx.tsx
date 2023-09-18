@@ -1,7 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { cn } from "liutils";
+
+import { cn } from "@/lib/utils";
+
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
