@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import { allBlogs } from "contentlayer/generated";
+import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
 
 export default function Blog() {
@@ -9,7 +9,7 @@ export default function Blog() {
         <div className="content-start flex-col">
           <h1 className="mb-2">Checkout my Blog</h1>
           <div className="mt-8 mb-8">
-            {allBlogs
+            {allDocs
               .sort((a, b) => {
                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
                   return -1;

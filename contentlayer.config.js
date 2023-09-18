@@ -28,7 +28,7 @@ export const Doc = defineDocumentType(() => ({
     description: {
       type: 'string',
     },
-    published: {
+    publishedAt: {
       type: 'boolean',
       default: true,
     },
