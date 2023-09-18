@@ -1,10 +1,10 @@
+import './globals.css';
 import Navbar from "@/components/Navbar";
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['greek'] })
 
 export const metadata: Metadata = {
   title: 'Daedalus',
@@ -29,5 +29,5 @@ export default function RootLayout({
         </body>
     </html>
     </ClerkProvider>
-  )
+  );
 }
