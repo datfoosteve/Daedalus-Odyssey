@@ -27,10 +27,11 @@ export const Doc = defineDocumentType(() => ({
     },
     description: {
       type: 'string',
+      required: true,
     },
     publishedAt: {
       type: 'string',
-      default: true,
+      required: true,
     },
   },
   computedFields,
@@ -46,18 +47,18 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'github-dark',
+          theme: "one-dark-pro",
           onVisitLine(node) {
             //Prevent lines from collapsin in `display: grid` mode, and allow empty lines to be copy and pasted
             if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }]
+              node.children = [{ type: 'text', value: " " }]
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
+            node.properties.className.push("line--highlighted")
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted']
+            node.properties.className = ["word--highlighted"]
           },
         },
       ],
@@ -65,8 +66,8 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ['subheading-anchor'],
-            ariaLabel: 'Link to section',
+            className: ["anchor"],
+            ariaLabel: "Link to section",
           },
         },
       ],
