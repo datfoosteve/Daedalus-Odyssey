@@ -1,5 +1,5 @@
-import Footer from "src/components/Footer";
-import { prisma } from "src/db";
+import Footer from "@/components/Footer";
+import { prisma } from "@/db";
 import { SignInButton, SignOutButton, currentUser } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 
