@@ -10,21 +10,21 @@ export default function Footer() {
           target="_blank"
           className="text-[#8e8f93] hover:text-white underline"
         >
-          follow me on twitter
+          Twitter
         </Link>
         <Link
           href="https://www.linkedin.com/in/datfoosteve/"
           target="_blank"
           className="text-[#8e8f93] hover:text-white underline"
         >
-          connect with me on linkedin
+          Linkedin
         </Link>
         <Link
           href="https://github.com/datfoosteve"
           target="_blank"
           className="text-[#8e8f93] hover:text-white underline"
         >
-          checkout my work on github
+          Github
         </Link>
       </footer>
       <br></br>

@@ -7,7 +7,7 @@ export default function Blog() {
     <main className="flex justify-center h-screen">
       <div className="h-full w-full md:max-w-2xl">
         <div className="content-start flex-col">
-          <h1 className="mb-2">Checkout my Blog</h1>
+          <h1 className="mb-2">The Blog</h1>
           <div className="mt-8 mb-8">
             {allDocs
               .sort((a, b) => {

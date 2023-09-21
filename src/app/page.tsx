@@ -19,7 +19,7 @@ export default function Home() {
               className="rounded"
             />
             <div className="flex items-center">
-              <p className="text-[#050606]">
+              <p className="text-white">
                 I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer. and many more. I&apos;ve been
                 spending my free time building and maintaining all the projects
                 below!{" "}
@@ -33,22 +33,22 @@ export default function Home() {
           </div>
           <div className="mb-8">
             <Project
-              title="Freehand"
-              description="open source illustrations designed to elevate your next project."
+              title="AIWA"
+              description="All In with Arlie. Fitness-App designed to be intuitive and a PWA to track ."
               wip
               link="https://github.com/"
             />
 
             <Project
-              title="splatte.dev"
-              description="my personal website built using next.js, tailwind css, prisma, and vercel."
-              link="https://github.com/"
+              title="ProjectforHackers"
+              description="Music search engine with which users can search for their favorite artists, songs, and albums. Users can listen to songs, view lyrics, and view their favorite artists' upcoming concerts and events."
+              link="https://github.com/colinmchale/ProjectforHackers"
             />
 
             <Project
-              title="splatte/ui"
-              description="a collection of fully customizable ui components for next.js and react, just a copy and paste away."
-              link="https://github.com/"
+              title="JATE - Just Another Text Editor"
+              description="A PWA text editor in which users can create, edit, and save text files. Is a downloadable PWA."
+              link="https://github.com/datfoosteve/textEditor"
             />
 
             <Project
@@ -68,12 +68,9 @@ export default function Home() {
               description="a music sharing social media website to upgrade your music collection."
               link="https://github.com/"
             />
-            <p className="mt-4 text-sm italic font-light">
-              Course projects can be shown upon request.
-            </p>
           </div>
           <Footer />
-        </div>
+        </div> 
       </div>
     </main>
   );
