@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
-import Headshot from "/images/headshotWebp.webp";
+// import headshotWebp from "/images/headshotWebp.webp";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
           <div className="flex content-center space-x-3">
             <Image
-              src={Headshot}
+              src="/public/images/headshotWebp.webp"
               alt="Stephen Puthenpurackal"
               width={120}
               height={120}
