@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  images: {
+    formats: ["webp"],
+  },
 };
 
 module.exports = withContentlayer(nextConfig);
