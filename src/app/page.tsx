@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
+import styles from "src/styles/HeadShotResponsive.module.css";
 // import headshotWebp from "/images/headshotWebp.webp";
 
 export default function Home() {
@@ -11,13 +12,16 @@ export default function Home() {
         <div className="content-start flex-col">
           <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
           <div className="flex content-center space-x-3">
+           <div className={styles.featuredImageWrapper}>
             <Image
               src="/images/headshotWebp.webp"
               alt="Stephen Puthenpurackal"
-              width={240}
-              height={240}
-              className="rounded"
+              fill
+              sizes="(max-width: 768px) 100vw, 700px"
+              priority
+              className={`${styles.featuredImageWrapper} rounded`}
             />
+            </div>
             <div className="flex items-center">
               <p className="text-white">
                 I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer. and many more. I&apos;ve been

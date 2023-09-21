@@ -1,9 +1,10 @@
-
+import VerticalAlternatingTimeline from "@/components/Timeline";
 
 export default function Timeline() {
     return (
         <>
-           <div> &apos;Timeline&apos;
+           <div className="h-full w-full md:max-w-2xl">
+            <VerticalAlternatingTimeline />
            </div>
         </>
     );

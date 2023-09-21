@@ -29,7 +29,10 @@ export default function Navbar() {
     pathname = "/blog";
   }
   if (pathname.includes("/projects")) {
-    pathname = "/";
+    pathname = "/projects";
+  }
+  if (pathname.includes("/timeline")) {
+    pathname = "/timeline";
   }
 
   return (
