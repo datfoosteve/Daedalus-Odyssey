@@ -6,7 +6,7 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
-    formats: ["webp"],
+    formats: ["image/webp"],
   },
 };
 
