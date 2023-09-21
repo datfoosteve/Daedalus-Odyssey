@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
           <div className="flex content-center space-x-3">
             <Image
-              src="https://imgur.com/a/4hganb9"
+              src="/public/images/headshot.png"
               alt="Stephen Puthenpurackal"
               width={120}
               height={120}
