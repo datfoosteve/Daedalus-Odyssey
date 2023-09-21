@@ -24,9 +24,8 @@ export default function Home() {
             </div>
             <div className="flex items-center">
               <p className="text-white">
-                I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer. and many more. I&apos;ve been
-                spending my free time building and maintaining all the projects
-                below!{" "}
+                I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer, and much more. I&apos;ve been
+                spending my free time building and maintaining several different projects, a few of them are listed below.{" "}
               </p>
             </div>
           </div>

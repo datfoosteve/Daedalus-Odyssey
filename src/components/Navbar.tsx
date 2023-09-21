@@ -34,6 +34,9 @@ export default function Navbar() {
   if (pathname.includes("/timeline")) {
     pathname = "/timeline";
   }
+  if (pathname.includes("/resume")) {
+    pathname = "/resume";
+  }
 
   return (
     <aside className="-ml-[8px] mb-8 tracking-tight">
