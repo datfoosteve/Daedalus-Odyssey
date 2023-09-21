@@ -1,3 +1,5 @@
+"use client";
+
 import VerticalAlternatingTimeline from "@/components/Timeline";
 
 export default function Timeline() {
