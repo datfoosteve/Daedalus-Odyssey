@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
-import Headshot from "../public/images/headshotWebp.webp"
+import Headshot from "/images/headshotWebp.webp";
 
 export default function Home() {
   return (
