@@ -12,14 +12,14 @@ export default function Home() {
           <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
           <div className="flex content-center space-x-3">
             <Image
-              src="/public/images/headshotWebp.webp"
+              src="/images/headshotWebp.webp"
               alt="Stephen Puthenpurackal"
-              width={120}
-              height={120}
+              width={240}
+              height={240}
               className="rounded"
             />
             <div className="flex items-center">
-              <p className="text-[#D3D4D4]">
+              <p className="text-[#050606]">
                 I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer. and many more. I&apos;ve been
                 spending my free time building and maintaining all the projects
                 below!{" "}
