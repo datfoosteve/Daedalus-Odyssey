@@ -28,6 +28,7 @@ const VerticalAlternatingTimeline = () => {
       items={items}
       mode="VERTICAL_ALTERNATING"
       itemWidth={150}
+      enableOutline
     />
   );
 };
