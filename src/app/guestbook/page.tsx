@@ -41,12 +41,7 @@ export default async function Guestbook() {
       <div className="h-full w-full md:max-w-2xl">
         <div className="content-start flex-col">
           <h1 className="mb-2">Sign my Guestbook</h1>
-          <p className="mb-6">
-            Inspired by{" "}
-            <a href="https://twitter.com/leeerob" target="_blank">
-              @leeerob
-            </a>
-          </p>
+          
           {!user && (
             <a className="text-white border p-2 rounded mb-5">
               <SignInButton>Sign In</SignInButton>
