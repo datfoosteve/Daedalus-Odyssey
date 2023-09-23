@@ -15,5 +15,5 @@ model Guestbook {
   id String @id @default(uuid())
   name String
   content String
-  publishedAt DateTime @default(now())
+  createdAt DateTime @default(now())
 }

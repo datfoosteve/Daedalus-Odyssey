@@ -7,7 +7,7 @@ function getEntries() {
   return prisma.guestbook.findMany({
     take: 100,
     orderBy: {
-      publishedAt: "desc",
+      createdAt: "desc",
     },
   });
 }
