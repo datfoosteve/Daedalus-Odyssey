@@ -21,6 +21,9 @@ const navItems = {
   "/timeline": {
     name: "/timeline",
   },
+  "/guestbook": {
+    name: "/guestbook",
+  },
 };
 
 export default function Navbar() {
@@ -36,6 +39,9 @@ export default function Navbar() {
   }
   if (pathname.includes("/resume")) {
     pathname = "/resume";
+  }
+  if (pathname.includes("/guestbook")) {
+    pathname = "/guestbook";
   }
 
   return (
