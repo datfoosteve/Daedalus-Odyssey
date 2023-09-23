@@ -8,7 +8,7 @@ function getEntries() {
     take: 100,
     orderBy: {
       createdAt: "desc",
-    },
+    } as const,
   });
 }
 

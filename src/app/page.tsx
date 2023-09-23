@@ -17,7 +17,7 @@ export default function Home() {
               src="/images/headshotWebp.webp"
               alt="Stephen Puthenpurackal"
               fill
-              sizes="(max-width: 768px) 100vw, 700px"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               priority
               className={`${styles.featuredImageWrapper} rounded`}
             />
