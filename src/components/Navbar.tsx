@@ -23,7 +23,7 @@ const navItems = {
   },
   "/guestbook": {
     name: "/guestbook",
-  },
+  }
 };
 
 export default function Navbar() {
@@ -45,7 +45,7 @@ export default function Navbar() {
   }
 
   return (
-    <aside className="-ml-[8px] mb-8 tracking-tight">
+    // <aside className="-ml-[8px] mb-8 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <LayoutGroup>
           <nav
@@ -87,6 +87,6 @@ export default function Navbar() {
           </nav>
         </LayoutGroup>
       </div>
-    </aside>
+    // </aside>
   );
 }
