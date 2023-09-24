@@ -2,8 +2,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from 'next/font/google'
 
-
+const inter = Inter({ subsets: ['latin-ext'] })
 
 export const metadata: Metadata = {
   title: "Daedalus",

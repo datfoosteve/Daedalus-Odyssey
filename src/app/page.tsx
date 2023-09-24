@@ -3,28 +3,33 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
 // import styles from "src/styles/HeadShotResponsive.module.css";
-// import headshotWebp from "/images/headshotWebp.webp";
+ import headshotWebp from "/public/images/headshotWebp.webp";
 
 export default function Home() {
   return (
     <main className="flex justify-center h-screen">
       <div className="h-full w-full md:max-w-2xl">
         <div className="content-start flex-col">
-          <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
-          <div className="flex content-center space-x-3">
-           <div className="rounded-xl bg-gray-200 relative">
+          <h1 className="mb-8">Hi, I&apos;m Stephen Puthenpurackal</h1>
+          <div className="flex content-center space-x-6">
+           <div className="rounded-xl relative w-96 h-36 overflow-hidden">
             <Image
-              src="/images/headshotWebp.webp"
+              // src="/images/headshotWebp.webp"
+              src={headshotWebp}
               alt="Stephen Puthenpurackal"
               fill={true}
-              sizes="(min-width: 780px) 180px, (min-width: 660px) calc(49vw - 148px), (min-width: 380px) calc(39.23vw - 86px), 57px"
+              sizes="(min-width: 740px) 114px, (min-width: 380px) calc(17.35vw - 10px), 52px"
               className="object-cover"
+              priority={true}
             />
             </div>
             <div className="flex items-center">
               <p className="text-white">
                 I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer, and much more. I&apos;ve been
-                spending my free time building and maintaining several different projects, a few of them are listed below.{" "}
+                spending all my time building and maintaining several different projects. {" "} <br/>Take a look around, you might see something you like!
+                <br />
+                <br />
+                Before you leave, don&apos;t forget to sign my guestbook!
               </p>
             </div>
           </div>
