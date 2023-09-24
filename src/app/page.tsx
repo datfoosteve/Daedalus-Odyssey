@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
-import styles from "src/styles/HeadShotResponsive.module.css";
+// import styles from "src/styles/HeadShotResponsive.module.css";
 // import headshotWebp from "/images/headshotWebp.webp";
 
 export default function Home() {
@@ -12,14 +12,13 @@ export default function Home() {
         <div className="content-start flex-col">
           <h1 className="mb-8">Hi, I&apos;m Stephen</h1>
           <div className="flex content-center space-x-3">
-           <div className={styles.featuredImageWrapper}>
+           <div className="rounded-xl bg-gray-200 relative">
             <Image
               src="/images/headshotWebp.webp"
               alt="Stephen Puthenpurackal"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              priority
-              className={`${styles.featuredImageWrapper} rounded`}
+              fill={true}
+              sizes="(min-width: 780px) 180px, (min-width: 660px) calc(49vw - 148px), (min-width: 380px) calc(39.23vw - 86px), 57px"
+              className="object-cover"
             />
             </div>
             <div className="flex items-center">
