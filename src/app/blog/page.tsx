@@ -17,7 +17,7 @@ export default function Blog() {
                 return 1;
               })
               .map((post) => (
-                <Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
+                <Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`${post.slug}`}>
                   <div className="w-full flex flex-col">
                     <div className="flex justify-between">
                       <p className="text-white tracking-tight hover:text-white hover:underline text-xl">
