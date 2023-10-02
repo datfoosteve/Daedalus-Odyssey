@@ -1,5 +1,7 @@
 // src/app/projects/page.tsx
 
+'use client';
+
 import React, { useState, useEffect, FC } from 'react';  // Import React and necessary hooks
 import axios from 'axios';
 import RepositoryCard from '../../components/RepositoryCard';
