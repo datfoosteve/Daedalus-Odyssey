@@ -6,7 +6,7 @@ import React, { useState, useEffect, FC } from 'react';
 import RepositoryCard from '../../components/RepositoryCard';
 import Repository from '../../types/Repository';  // adjust the import path to match your project structure
 
-const ProjectsPage: FC = () => {
+const ProjectsListPage: FC = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);  // use Repository type here
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const ProjectsPage: FC = () => {
   );
 };
 
-export default ProjectsPage;
+export default ProjectsListPage;
