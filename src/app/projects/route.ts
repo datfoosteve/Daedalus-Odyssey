@@ -1,23 +1,28 @@
-// app/projects/route.ts
+// src/app/projects/route.ts
 
-import { Request, Response } from 'node-fetch';  // Import types from node-fetch or any fetch library you're using
+// src/app/projects/route.ts
 
-export async function GET(request: Request): Promise<Response> {
-  // You could use the fetch API or any other HTTP client you prefer
-  const response = await fetch('https://api.github.com/user/repos', {
-    headers: {
-      Authorization: `token ${process.env.GITHUB_PAT}`,
-    },
-  });
+// src/app/projects/route.ts
 
-  // Check if the request was successful
-  if (!response.ok) {
-    // You could return a custom error response here
-    return new Response('Failed to fetch repositories', { status: response.status });
+import { NextResponse } from 'next/server';
+import axios from 'axios';
+
+export async function GET(): Promise<NextResponse> {
+  try {
+    const response = await axios.get('https://api.github.com/user/repos', {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_PAT}`,
+      },
+    });
+    return NextResponse.json(response.data);
+  } catch (error) {
+    console.error(error);
+    // Use NextResponse.json to return a JSON error response with a status code of 500
+    return NextResponse.json({ error: 'Failed to fetch repositories' }, { status: 500 });
   }
-
-  const data = await response.json();
-  return new Response(JSON.stringify(data), {
-    headers: { 'Content-Type': 'application/json' },
-  });
 }
+
+
+
+
+
