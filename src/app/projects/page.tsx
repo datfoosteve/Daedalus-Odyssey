@@ -21,21 +21,22 @@ const ProjectsPage: FC = () => {
 
   return (
     <div>
-      {repositories.map((repo: Repository) => (  // use Repository type here
-        <RepositoryCard
-          key={repo.id}
-          id={repo.id}
-          name={repo.name}
-          description={repo.description}
-          html_url={repo.html_url}
-          language={repo.language}
-          stargazers_count={repo.stargazers_count}
-          forks_count={repo.forks_count}
-          owner={repo.owner}  // ensure this property exists in your data
-          created_at={repo.created_at}  // ensure this property exists in your data
-          updated_at={repo.updated_at}  // ensure this property exists in your data
-        />
-      ))}
+      {repositories.map((repo: Repository) => (
+  <RepositoryCard
+    key={repo.id}
+    id={repo.id}
+    name={repo.name}
+    description={repo.description}
+    html_url={repo.html_url}
+    language={repo.language}
+    stargazers_count={repo.stargazers_count}
+    forks_count={repo.forks_count}
+    owner={repo.owner || 'Unknown'} // Provide a default value if 'owner' is missing
+    created_at={repo.created_at || 'N/A'} // Provide a default value if 'created_at' is missing
+    updated_at={repo.updated_at || 'N/A'} // Provide a default value if 'updated_at' is missing
+  />
+))}
+
     </div>
   );
 };
