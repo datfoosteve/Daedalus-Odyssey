@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RepositoryCard from '@/components/RepositoryCard';
 
-const ProjectsPage: React.FC = () => {
+const ProjectsPageComponent: React.FC = () => {
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const ProjectsPage: React.FC = () => {
   );
 };
 
-export default ProjectsPage;
+export default ProjectsPageComponent;
