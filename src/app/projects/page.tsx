@@ -1,37 +1,27 @@
 // src/app/projects/page.tsx
 
-'use client';
+'use client' // Error components must be Client Components
 
-import React, { useState, useEffect, FC } from 'react';  // Import React and necessary hooks
-import axios from 'axios';
+import React, { useState, useEffect, FC } from 'react';
 import RepositoryCard from '../../components/RepositoryCard';
-import Repository from '../../types/Repository';  // Adjust the import path to match your project structure
+import Repository from '../../types/Repository';  // adjust the import path to match your project structure
 
-// Define an async function to fetch data
-async function fetchRepositories() {
-  const response = await axios.get('https://api.github.com/user/repos', {
-    headers: {
-      Authorization: `token ${process.env.GITHUB_PAT}`,
-    },
-  });
-  return response.data;
-}
+const ProjectsPage: FC = () => {
+  const [repositories, setRepositories] = useState<Repository[]>([]);  // use Repository type here
 
-interface ProjectsPageProps {
-  params: { [key: string]: string };  // Define a prop type for params
-}
-
-const ProjectsPage: FC<ProjectsPageProps> = ({ params }) => {
-  // Assume that `params.username` contains the GitHub username whose repositories you want to fetch
-  const [repositories, setRepositories] = useState<Repository[]>([]);
-  
   useEffect(() => {
-    fetchRepositories().then(setRepositories);
+    const fetchRepositories = async () => {
+      const response = await fetch('/projects');
+      const data = await response.json();
+      setRepositories(data);
+    };
+
+    fetchRepositories();
   }, []);
-  
+
   return (
     <div>
-      {repositories.map((repo: Repository) => (
+      {repositories.map((repo: Repository) => (  // use Repository type here
         <RepositoryCard key={repo.id} {...repo} />
       ))}
     </div>
