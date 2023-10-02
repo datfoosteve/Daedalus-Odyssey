@@ -1,6 +1,6 @@
 // src/app/projects/page.tsx
 
-'use client' // Error components must be Client Components
+'use client' 
 
 import React, { useState, useEffect, FC } from 'react';
 import RepositoryCard from '../../components/RepositoryCard';
