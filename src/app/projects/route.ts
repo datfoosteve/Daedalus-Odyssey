@@ -24,5 +24,10 @@ export async function GET(): Promise<NextResponse> {
 
 
 
+// This code defines a route in a Next.js application that fetches a list of repositories from the GitHub API and returns them as a JSON response.
 
+// The GET function is an asynchronous function that returns a Promise of a NextResponse object. Inside the function, an HTTP GET request is made to the GitHub API to fetch a list of repositories for the authenticated user. 
+// If the request is successful, 
+// the response data is returned as a JSON response using the NextResponse.json method.
+//  If the request fails, an error message is logged to the console, and a JSON error response with a status code of 500 is returned using the NextResponse.json method.
 
