@@ -37,28 +37,28 @@ const RepositoryCard: React.FC<RepositoryProps> = ({
   created_at,
   updated_at,
 }) => (
-  <Card className="bg-white shadow-lg rounded-lg p-6 mb-4">
-    <CardHeader className="mb-4">
+  <Card className="bg-gray-400 shadow-xl drop-shadow-xl rounded-lg p-6 mb-4">
+    <CardHeader className="flex bg-gray-300 rounded-lg p-6 mb-4">
       <CardTitle>
-        <a href={html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+        <a href={html_url} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
           {name}
         </a>
       </CardTitle>
-      <CardDescription className="text-gray-700">
+      <CardDescription className="text-gray-700 items-center">
         {description}
       </CardDescription>
     </CardHeader>
-    <CardContent>
-      <div className="flex items-center mb-2">
-        <img src={owner.avatar_url} alt={`${owner.login}'s avatar`} className="w-10 h-10 rounded-full mr-4" />
-        <a href={owner.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+    <CardContent >
+      <div className="flex ring-offset-green-400 items-center mb-2">
+        <img src={owner.avatar_url} alt={`${owner.login}'s avatar`} className="w-10 h-10 rounded-xl mr-4" />
+        <a href={owner.html_url} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
           {owner.login}
         </a>
       </div>
-      <div className="text-gray-700">
-        Language: {language} | Stars: {stargazers_count} | Forks: {forks_count}
+      <div className="text-gray-700 items-center">
+        Language: {language}
       </div>
-      <div className="text-gray-500 text-sm mt-2">
+      <div className="flex text-gray-500 text-sm mt-4 pt-6 items-center">
         Created: {new Date(created_at).toLocaleDateString()} | Updated: {new Date(updated_at).toLocaleDateString()}
       </div>
     </CardContent>

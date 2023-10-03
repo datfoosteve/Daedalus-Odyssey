@@ -12,8 +12,7 @@ const ProjectsListPage: FC = () => {
   useEffect(() => {
     const fetchRepositories = async () => {
       try {
-        const response = await fetch("/projects");
-  
+        const response = await fetch("https://api.github.com/users/datfoosteve/repos");
         if (!response.ok) {
           console.error(`HTTP error! Status: ${response.status}`);
           const errorText = await response.text();
@@ -39,7 +38,8 @@ const ProjectsListPage: FC = () => {
   
 
   return (
-    <div>
+    <div className="container mx-auto py-12 rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-3xl">
       {repositories.map((repo: Repository) => (
         <RepositoryCard
           key={repo.id}
@@ -55,6 +55,7 @@ const ProjectsListPage: FC = () => {
           updated_at={repo.updated_at || "N/A"} // Provide a default value if 'updated_at' is missing
         />
       ))}
+    </div>
     </div>
   );
 };
