@@ -13,23 +13,30 @@ const ProjectsListPage: FC = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch("/projects");
-        
+  
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          console.error(`HTTP error! Status: ${response.status}`);
+          const errorText = await response.text();
+          console.error("Response Text:", errorText);
+          return;
         }
-        
+  
         const data = await response.json();
+  
         // Log the response data
-        console.log(data);
+        console.log("JSON Data:", data);
+  
+        // Now you can do something with the data, like setting it in state
         setRepositories(data);
       } catch (error) {
-        // Log any error that occurs during the fetch
+        // Handle any other errors that might occur during the fetch
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchRepositories();
   }, []);
+  
 
   return (
     <div>
