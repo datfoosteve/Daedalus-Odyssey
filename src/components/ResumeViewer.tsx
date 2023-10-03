@@ -20,7 +20,7 @@ const styles = {
 };
 
 function ResumeViewer() {
-  const pdfUrl = '/pdf/Stephen_Puthenpurackal_Resume_2.pdf';
+  const pdfUrl = '/public/pdf/Stephen _Puthenpurackal_Resume_2.pdf';
 
   return (
     <div style={styles.container}>
