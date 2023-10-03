@@ -8,6 +8,20 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
+  webpack: (config) => {
+    // Add a rule for handling .node files
+    config.module.rules.push({
+      test: /\.node$/,
+      use: 'node-loader',
+    });
+
+    return config;
+  },
 };
 
 module.exports = withContentlayer(nextConfig);
+
+
+
+
+
