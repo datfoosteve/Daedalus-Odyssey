@@ -1,5 +1,7 @@
 import React from 'react';
 import { Document, Page } from 'react-pdf';
+import pdfjs from '../../public/pdf.worker'; // Adjust the path as needed
+
 
 const styles = {
   container: {
