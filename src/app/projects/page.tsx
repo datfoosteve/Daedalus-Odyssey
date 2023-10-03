@@ -11,9 +11,21 @@ const ProjectsListPage: FC = () => {
 
   useEffect(() => {
     const fetchRepositories = async () => {
-      const response = await fetch("/projects");
-      const data = await response.json();
-      setRepositories(data);
+      try {
+        const response = await fetch("/projects");
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        // Log the response data
+        console.log(data);
+        setRepositories(data);
+      } catch (error) {
+        // Log any error that occurs during the fetch
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchRepositories();

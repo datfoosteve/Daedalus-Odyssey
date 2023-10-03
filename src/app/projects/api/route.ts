@@ -1,8 +1,4 @@
-// src/app/projects/route.ts
 
-// src/app/projects/route.ts
-
-// src/app/projects/route.ts
 
 import { NextResponse } from 'next/server';
 import axios from 'axios';
