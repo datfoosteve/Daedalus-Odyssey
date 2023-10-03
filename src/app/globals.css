@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@300&family=Noto+Sans:wght@500&family=Playfair+Display:wght@900&display=swap');
+
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-family: 'playfair display', serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Gloock', sans-serif;
+} */
+
+p {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 
 body {
   background-color: #111010;
