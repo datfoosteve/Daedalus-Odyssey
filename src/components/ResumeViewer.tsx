@@ -1,7 +1,11 @@
-import React from 'react';
-import { Document, Page } from 'react-pdf';
-import pdfjs from '../../public/pdf.worker'; // Adjust the path as needed
+"use client";
 
+import React, { PureComponent } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const styles = {
   container: {
@@ -21,19 +25,20 @@ const styles = {
   },
 };
 
-function ResumeViewer() {
-  const pdfUrl = '/public/pdf/Stephen _Puthenpurackal_Resume_2.pdf';
 
-  return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>My Resume</h1>
-      <div style={styles.pdfContainer}>
-        <Document file={pdfUrl}>
-          <Page pageNumber={1} /> {/* Display the first page of the PDF */}
-        </Document>
+export default class ResumeViewer extends PureComponent {
+  pdfUrl = '/public/pdf/Stephen _Puthenpurackal_Resume_2.pdf';
+
+  render() {
+    return (
+      <div style={styles.container}>
+        <h1 style={styles.header}>My Resume</h1>
+        <div style={styles.pdfContainer}>
+          <Document file={this.pdfUrl}>
+            <Page pageNumber={1} /> {/* Display the first page of the PDF */}
+          </Document>
+        </div>
       </div>
-    </div>
-  );
-}
-
-export default ResumeViewer;
+    );
+  }
+};   // End of ResumeViewer component
