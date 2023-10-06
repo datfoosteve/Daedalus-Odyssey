@@ -9,7 +9,7 @@ const ResumeLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       {children}
-      <Script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" strategy="afterInteractive" />
+      <Script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" strategy="beforeInteractive" />
     </>
   );
 };

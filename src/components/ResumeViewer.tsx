@@ -28,7 +28,7 @@ const styles = {
 
 export default class ResumeViewer extends PureComponent {
   pdfUrl = '/public/pdf/Stephen _Puthenpurackal_Resume_2.pdf';
-
+  
   render() {
     return (
       <div style={styles.container}>
