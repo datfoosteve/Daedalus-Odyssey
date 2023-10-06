@@ -3,31 +3,43 @@
 import React, { PureComponent } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-
-
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const styles = {
   container: {
-    backgroundColor: 'bg-gray-200', // Grey background color
-    borderRadius: 'rounded-lg', // Rounded corners
-    padding: 4, // Padding
-    margin: 'auto', // Center the container
-    width: '96', // Width of the container
+    backgroundColor: '#F3F4F6', // Slightly lighter than bg-gray-200 for a cleaner look
+    borderRadius: '0.5rem',
+    padding: '2rem', // Increased padding for a more spacious feel
+    margin: 'auto',
+    width: '100%',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
   },
   header: {
-    fontSize: 'text-xl', // Header font size
-    marginBottom: 4, // Margin bottom
+    fontSize: '1.5rem', // Slightly larger font size
+    marginBottom: '1.5rem', 
+    letterSpacing: '1px', // Some letter spacing for a premium feel
   },
   pdfContainer: {
-    border: 'border-2 border-gray-300', // Grey border
-    borderRadius: 'rounded-lg', // Rounded corners
+    border: '2px solid #E5E7EB', 
+    borderRadius: '0.5rem',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
+    marginBottom: '1rem', // Space for the download button
   },
+  downloadButton: {
+    display: 'inline-block',
+    backgroundColor: '#3B82F6',
+    color: 'white',
+    padding: '0.5rem 1rem',
+    borderRadius: '0.5rem',
+    textDecoration: 'none',
+    textAlign: 'center' as 'center', // Updated here
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+},
+
 };
 
-
 export default class ResumeViewer extends PureComponent {
-  pdfUrl = '/public/pdf/Stephen _Puthenpurackal_Resume_2.pdf';
+  pdfUrl = '/pdf/StephenPuthenpurackalResume2.pdf';
   
   render() {
     return (
@@ -35,9 +47,13 @@ export default class ResumeViewer extends PureComponent {
         <h1 style={styles.header}>My Resume</h1>
         <div style={styles.pdfContainer}>
           <Document file={this.pdfUrl}>
-            <Page pageNumber={1} /> {/* Display the first page of the PDF */}
+            <Page pageNumber={1} />
+            <Page pageNumber={2} />
           </Document>
         </div>
+        <a href={this.pdfUrl} download="StephenPuthenpurackalResume.pdf" style={styles.downloadButton}>
+        Download Resume
+      </a>
       </div>
     );
   }
