@@ -1,7 +1,8 @@
-"use client";
 
+"use client";
 import React, { PureComponent } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { Button } from "@/components/ui/button"; // Import the Button component
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -25,16 +26,16 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
     marginBottom: '1rem', // Space for the download button
   },
-  downloadButton: {
-    display: 'inline-block',
-    backgroundColor: '#3B82F6',
-    color: 'white',
-    padding: '0.5rem 1rem',
-    borderRadius: '0.5rem',
-    textDecoration: 'none',
-    textAlign: 'center' as 'center', // Updated here
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-},
+//   downloadButton: {
+//     display: 'inline-block',
+//     backgroundColor: '#3B82F6',
+//     color: 'white',
+//     padding: '0.5rem 1rem',
+//     borderRadius: '0.5rem',
+//     textDecoration: 'none',
+//     textAlign: 'center' as 'center', // Updated here
+//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+// },
 
 };
 
@@ -51,9 +52,9 @@ export default class ResumeViewer extends PureComponent {
             <Page pageNumber={2} />
           </Document>
         </div>
-        <a href={this.pdfUrl} download="StephenPuthenpurackalResume.pdf" style={styles.downloadButton}>
-        Download Resume
-      </a>
+        <Button variant="outline" asChild>
+          <a href={this.pdfUrl} download="StephenPuthenpurackalResume.pdf">Download Resume</a>
+        </Button>
       </div>
     );
   }
