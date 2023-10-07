@@ -49,7 +49,6 @@ export default class ResumeViewer extends PureComponent {
         <div style={styles.pdfContainer}>
           <Document file={this.pdfUrl}>
             <Page pageNumber={1} />
-            <Page pageNumber={2} />
           </Document>
         </div>
         <Button variant="outline" asChild>
