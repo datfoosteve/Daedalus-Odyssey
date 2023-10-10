@@ -23,6 +23,9 @@ const navItems = {
   },
   "/guestbook": {
     name: "/guestbook",
+  },
+  "/contact": {
+    name: "/contact",
   }
 };
 
@@ -42,6 +45,9 @@ export default function Navbar() {
   }
   if (pathname.includes("/guestbook")) {
     pathname = "/guestbook";
+  }
+  if (pathname.includes("/contact")) {
+    pathname = "/contact";
   }
 
   return (

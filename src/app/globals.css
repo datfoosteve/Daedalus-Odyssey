@@ -22,6 +22,14 @@ h3 {
   font-family: 'Gloock', sans-serif;
 } */
 
+.react-pdf__Page__textContent {
+  display: none !important;
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+  display: none;
+}
+
 p {
   font-family: 'Noto Sans', sans-serif;
 }

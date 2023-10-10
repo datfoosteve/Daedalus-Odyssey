@@ -1,12 +1,12 @@
 
 "use client";
-import React, { PureComponent } from 'react';
+import React, { PureComponent, CSSProperties } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button"; // Import the Button component
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const styles = {
+const styles: { [key: string]: CSSProperties } = {
   container: {
     backgroundColor: '#F3F4F6', // Slightly lighter than bg-gray-200 for a cleaner look
     borderRadius: '0.5rem',
@@ -21,21 +21,13 @@ const styles = {
     letterSpacing: '1px', // Some letter spacing for a premium feel
   },
   pdfContainer: {
-    border: '2px solid #E5E7EB', 
+    height: '60vh',  // This sets a fixed viewport height; adjust as necessary.
+    overflowY: 'auto',  // This makes it scrollable.
+    border: '2px solid #E5E7EB',
     borderRadius: '0.5rem',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
-    marginBottom: '1rem', // Space for the download button
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
+    marginBottom: '1rem',
   },
-//   downloadButton: {
-//     display: 'inline-block',
-//     backgroundColor: '#3B82F6',
-//     color: 'white',
-//     padding: '0.5rem 1rem',
-//     borderRadius: '0.5rem',
-//     textDecoration: 'none',
-//     textAlign: 'center' as 'center', // Updated here
-//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-// },
 
 };
 
