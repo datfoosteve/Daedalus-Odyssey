@@ -7,6 +7,8 @@ const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    subject: '',
     message: ''
   });
 
@@ -27,6 +29,7 @@ const ContactPage: React.FC = () => {
       <p className="mb-4">Feel free to reach out to me through the form below:</p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
+
         <div>
           <label className="block mb-1">Name:</label>
           <input 
@@ -48,6 +51,30 @@ const ContactPage: React.FC = () => {
             onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))} 
           />
         </div>
+
+        
+        <div>
+          <label className="block mb-1">Phone:</label>
+          <input 
+            type="tel" 
+            placeholder="Phone Number" 
+            className="w-full p-2 border rounded" 
+            value={formData.phone} 
+            onChange={e => setFormData(prev => ({ ...prev, phone: e.target.value }))} 
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1">Subject:</label>
+          <input 
+            type="text" 
+            placeholder="Subject" 
+            className="w-full p-2 border rounded" 
+            value={formData.subject} 
+            onChange={e => setFormData(prev => ({ ...prev, subject: e.target.value }))} 
+          />
+        </div>
+
 
         <div>
           <label className="block mb-1">Message:</label>
