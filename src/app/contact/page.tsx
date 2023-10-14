@@ -1,36 +1,74 @@
-import Footer from "@/components/Footer";
+"use client";
 
-import React from 'react';
+import Footer from "@/components/Footer";
+import React, { useState } from 'react';
 
 const ContactPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    const data = await response.json();
+    // Handle the response, maybe show a success or error message
+  };
+
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Contact Me</h1>
-      <p>Feel free to reach out to me through the form below:</p>
+    <div className="p-5">
+      <h1 className="text-2xl mb-4">Contact Me</h1>
+      <p className="mb-4">Feel free to reach out to me through the form below:</p>
       
-      <form style={{ marginTop: '20px' }}>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Name:</label><br />
-          <input type="text" placeholder="Enter your name" style={{ width: '100%', padding: '10px', marginTop: '5px' }} />
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block mb-1">Name:</label>
+          <input 
+            type="text" 
+            placeholder="Enter your name" 
+            className="w-full p-2 border rounded" 
+            value={formData.name} 
+            onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))} 
+          />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
-          <label>Email:</label><br />
-          <input type="email" placeholder="Enter your email" style={{ width: '100%', padding: '10px', marginTop: '5px' }} />
+        <div>
+          <label className="block mb-1">Email:</label>
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            className="w-full p-2 border rounded" 
+            value={formData.email} 
+            onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))} 
+          />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
-          <label>Message:</label><br />
-          <textarea placeholder="Enter your message" rows={4} style={{ width: '100%', padding: '10px', marginTop: '5px' }}></textarea>
+        <div>
+          <label className="block mb-1">Message:</label>
+          <textarea 
+            placeholder="Enter your message" 
+            rows={4} 
+            className="w-full p-2 border rounded" 
+            value={formData.message} 
+            onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))} 
+          ></textarea>
         </div>
 
-        <button type="submit" style={{ padding: '10px 15px', background: '#4CAF50', color: 'white', border: 'none', cursor: 'pointer' }}>
+        <button 
+          type="submit" 
+          className="py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:bg-green-700"
+        >
           Submit
         </button>
       </form>
       <Footer />
     </div>
-
   );
 }
 
