@@ -11,19 +11,14 @@ interface EmailTemplateProps {
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   firstName, email, phone, subject, message
 }) => (
-  <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-    <h1 style={{ fontSize: '24px', marginBottom: '10px' }}>New Inquiry from {firstName}</h1>
-    <p style={{ marginBottom: '10px' }}>You have received a new message via your contact form:</p>
-    
-    <h2 style={{ fontSize: '18px', marginBottom: '10px' }}>Subject: {subject}</h2>
-    <p style={{ marginBottom: '10px' }}>Message: {message}</p>
-    
-    <h2 style={{ fontSize: '18px', marginBottom: '10px' }}>Contact Details</h2>
-    <p style={{ marginBottom: '10px' }}>Email: {email}</p>
-    <p style={{ marginBottom: '10px' }}>Phone: {phone}</p>
-    
-    <p style={{ marginTop: '20px', color: '#555' }}>Thank you for using our contact form,</p>
-    <p style={{ color: '#555' }}>The Team</p>
+  <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '600px', margin: '0 auto', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+    <h1 style={{ fontSize: '24px', marginBottom: '10px', color: '#333' }}>Thank You, {firstName}!</h1>
+    <p style={{ fontSize: '16px', marginBottom: '20px', color: '#555' }}>
+      I've received your message and appreciate you reaching out. I'll make sure to review your inquiry and get back to you as soon as possible. Looking forward to discussing how I can assist you with your web development needs!
+    </p>
+    <p style={{ fontSize: '14px', color: '#777' }}>Have a great day!</p>
+    <p style={{ fontSize: '14px', color: '#777', marginTop: '10px' }}>Warmest regards,</p>
+    <p style={{ fontSize: '14px', color: '#777' }}>Stephen</p>
   </div>
 );
 
