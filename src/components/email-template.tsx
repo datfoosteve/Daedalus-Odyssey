@@ -15,12 +15,13 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   <img src="https://stephenputhenpurackal.com/public/images/icon.png" alt="Website Logo" className="block mx-auto mb-6" />
   <h1 className="text-xl font-semibold mb-4 text-gray-800">Thank You, {firstName}!</h1>
   <p className="text-gray-700 mb-6">
-    I've received your message and appreciate you reaching out. I'll make sure to review your inquiry and get back to you as soon as possible. Looking forward to discussing how I can assist you with your web development needs!
+    I&apos;ve received your message and appreciate you reaching out. I&apos;ll make sure to review your inquiry and get back to you as soon as possible. Looking forward to discussing how I can assist you with your web development needs!
   </p>
   <p className="text-gray-600 mb-2">Have a great day!</p>
   <p className="text-gray-600 mb-1">Warmest regards,</p>
   <p className="text-gray-600">Stephen</p>
 </div>
+
 );
 
 
