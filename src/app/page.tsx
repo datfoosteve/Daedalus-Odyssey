@@ -40,8 +40,8 @@ export default function Home() {
           </div>
           <div className="mb-8">
             <Project
-              title="AIWA"
-              description="All In with Arlie. Fitness-App designed to be intuitive and a PWA to track ."
+              title="Artistic Portfolio"
+              description="Designing this page as much as i can right now!"
               wip
               link="https://github.com/"
             />
@@ -59,20 +59,20 @@ export default function Home() {
             />
 
             <Project
-              title="License Generator"
-              description="generate a license for your project on the terminal."
+              title="Mega Workbench"
+              description="Still need to finish this old project"
               link="https://github.com/"
             />
 
             <Project
-              title="ez-ignore"
-              description="create a custom .gitignore file straight from the terminal"
+              title="CNC machine  "
+              description="Custom fabrication machine needed for a project."
               link="https://github.com/"
             />
 
             <Project
-              title="BeGroovy"
-              description="a music sharing social media website to upgrade your music collection."
+              title="LIFE"
+              description="hardest project i have ever worked on."
               link="https://github.com/"
             />
           </div>
