@@ -1,6 +1,7 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { Chrono } from "react-chrono";
-
+import { motion } from "framer-motion";
+import 'tailwindcss/tailwind.css';
 const items = [
   {
     title: "May 2010 - March 2011",
@@ -58,15 +59,29 @@ const items = [
   },
 ];
 
-const VerticalAlternatingTimeline = () => {
+const VerticalAlternatingTimeline: React.FC = () => {
   return (
-    <Chrono
-      items={items}
-      mode="VERTICAL_ALTERNATING"
-      itemWidth={150}
-      enableOutline
-    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="shadow-lg p-6 mb-6 bg-white rounded-md"
+    >
+      <Chrono
+        items={items}
+        mode="VERTICAL_ALTERNATING"
+        itemWidth={250}
+        hideControls
+        theme={{ 
+          primary: "text-indigo-500",
+          secondary: "text-gray-500",
+          cardBgColor: "bg-gray-50",
+          cardForeColor: "text-gray-800"
+        }}
+      />
+    </motion.div>
   );
 };
 
 export default VerticalAlternatingTimeline;
+

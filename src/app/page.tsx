@@ -1,30 +1,34 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
-// import styles from "src/styles/HeadShotResponsive.module.css";
- import headshotWebp from "/public/images/headshotWebp.webp";
+import { motion } from "framer-motion";
+import headshotWebp from "/public/images/headshotWebp.webp";
 
 export default function Home() {
   return (
-    <main className="flex justify-center h-screen">
-      <div className="h-full w-full md:max-w-2xl">
-        <div className="content-start flex-col">
-          <h1 className="mb-8">Hi, I&apos;m Stephen Puthenpurackal</h1>
-          <div className="flex content-center space-x-6">
-           <div className="rounded-xl relative w-96 h-36 overflow-hidden">
+    <main className="flex justify-center min-h-screen bg-gray-100 p-6">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="h-full w-full md:max-w-5xl p-8 bg-white rounded-lg shadow-lg"
+      >
+        <div className="flex flex-col md:flex-row items-center md:space-x-8 mb-12">
+          <div className="rounded-full relative w-48 h-44 overflow-hidden mb-6 md:mb-0 md:w-60">
             <Image
-              // src="/images/headshotWebp.webp"
               src={headshotWebp}
               alt="Stephen Puthenpurackal"
-              fill={true}
-              sizes="(min-width: 740px) 114px, (min-width: 380px) calc(17.35vw - 10px), 52px"
-              className="object-cover"
+              layout="fill"
+              objectFit="cover"
               priority={true}
             />
-            </div>
-            <div className="flex items-center">
-              <p className="text-white">
+          </div>
+          <div>
+            <h1 className="text-2xl md:text-4xl mb-4 text-purple-600 text-right">Hi, I&apos;m Stephen Puthenpurackal</h1>
+            <p className="text-gray-700 text-right">
                 I&apos;m a full stack web developer, Computer science major, Fabricator, engineer, software developer, and much more. I&apos;ve been
                 spending all my time building and maintaining several different projects. {" "} <br/>Take a look around, you might see something you like!
                 <br />
@@ -35,8 +39,8 @@ export default function Home() {
           </div>
 
           {/* Projects Section */}
-          <div className="flex justify-between mt-8 mb-8">
-            <h1 className="">Projects</h1>
+          <div className="mb-12">
+          <h2 className="text-2xl mb-6 text-blue-500 font-semibold ">Current Projects</h2>
           </div>
           <div className="mb-8">
             <Project
@@ -77,8 +81,7 @@ export default function Home() {
             />
           </div>
           <Footer />
-        </div> 
-      </div>
+      </motion.div>
     </main>
   );
 }
