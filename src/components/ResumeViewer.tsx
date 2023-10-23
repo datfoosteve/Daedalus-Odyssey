@@ -14,18 +14,22 @@ const styles: { [key: string]: CSSProperties } = {
     margin: 'auto',
     width: '100%',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
+    alignSelf:'center',
+    alignItems:'center'
   },
   header: {
     fontSize: '1.5rem', // Slightly larger font size
-    marginBottom: '1.5rem', 
-    letterSpacing: '1px', // Some letter spacing for a premium feel
+    marginBottom: '1.0rem', 
+    letterSpacing: '0.8px', // Some letter spacing for a premium feel
+    color:'black',
+    alignSelf:'center'
   },
   pdfContainer: {
     height: '60vh',  // This sets a fixed viewport height; adjust as necessary.
     overflowY: 'auto',  // This makes it scrollable.
     border: '2px solid #E5E7EB',
-    borderRadius: '0.5rem',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
+    borderRadius: '1.2rem',
+    boxShadow: '0 3px 4px rgba(0, 0, 0, 0.1)', 
     marginBottom: '1rem',
   },
 

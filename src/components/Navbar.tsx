@@ -4,6 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { LayoutGroup, motion } from "framer-motion";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+
 
 const navItems = {
   "/": {
@@ -26,73 +37,76 @@ const navItems = {
   },
   "/contact": {
     name: "/contact",
-  }
+  },
+};
+
+const groupedNavItems = {
+  "About Me": [
+    { name: "Homepage", path: "/" },
+    { name: "Resume", path: "/resume" },
+    { name: "Timeline", path: "/timeline" },
+  ],
+  Work: [
+    { name: "Projects", path: "/projects" },
+    { name: "Blog", path: "/blog" },
+  ],
+  Interact: [
+    { name: "Guestbook", path: "/guestbook" },
+    { name: "Contact", path: "/contact" },
+  ],
 };
 
 export default function Navbar() {
   let pathname = usePathname() || "/";
-  if (pathname.includes("/blog/")) {
-    pathname = "/blog";
-  }
-  if (pathname.includes("/projects")) {
-    pathname = "/projects";
-  }
-  if (pathname.includes("/timeline")) {
-    pathname = "/timeline";
-  }
-  if (pathname.includes("/resume")) {
-    pathname = "/resume";
-  }
-  if (pathname.includes("/guestbook")) {
-    pathname = "/guestbook";
-  }
-  if (pathname.includes("/contact")) {
-    pathname = "/contact";
-  }
+
+  const paths = [
+    "/blog/",
+    "/projects",
+    "/timeline",
+    "/resume",
+    "/guestbook",
+    "/contact",
+  ];
+  paths.forEach((path) => {
+    if (pathname.includes(path)) {
+      pathname = path;
+    }
+  });
 
   return (
-    <aside className="-ml-[8px] mb-8 tracking-tight flexbox overflow-auto">
-      <div className="lg:sticky lg:top-20">
-        <LayoutGroup>
-          <nav
-            className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-            id="nav"
-          >
-            <div className="flex flex-row space-x-0 pr-10">
-              {Object.entries(navItems).map(([path, { name }]) => {
-                const isActive = pathname === path;
-                return (
-                  <Link
-                    key={path}
-                    href={path}
-                    className={clsx(
-                      "transition-all text-white hover:text-[#8e8f93] flex align-middle",
-                      {
-                        "text-white": !isActive,
-                      }
-                    )}
-                  >
-                    <span className="relative py-1 px-2">
-                      <span className="text-lg bold">{name}</span>
-                      {path === pathname ? (
-                        <motion.div
-                          className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 z-[-1] from-transparent to-neutral-900"
-                          layoutId="sidebar"
-                          transition={{
-                            type: "spring",
-                            stiffness: 350,
-                            damping: 30,
-                          }}
-                        />
-                      ) : null}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </nav>
-        </LayoutGroup>
-      </div>
-    </aside>
+    <NavigationMenu>
+    <NavigationMenuList className="m-2 pd-2">
+        {Object.entries(groupedNavItems).map(([group, items]) => (
+            <NavigationMenuItem key={group} className="group">
+                <NavigationMenuTrigger className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-2xl font-bold text-white hover:text-gray-200 transition-colors duration-300 px-4 py-2 outline-yellow-500">
+                    {group}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                    <ul className="grid text-center rounded-xl gap-2 p-2 bg-gray-100 shadow-lg w-[400px] md:w-[300px] sm:w-[250px]">
+                        {items.map(({ name, path }) => (
+                            <li key={name}>
+                                <Link href={path} passHref>
+                                    <NavigationMenuLink
+                                        asChild
+                                        className={clsx(
+                                            "block rounded-lg p-2 leading-none transition-all duration-150 transform hover:scale-105 hover:bg-blue-100 hover:text-blue-600 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50",
+                                            {
+                                                "text-black bg-slate-200 shadow-inner": pathname === path, 
+                                                "text-gray-700": true,
+                                            }
+                                        )}
+                                    >
+                                        <div className="text-md font-medium">{name}</div>
+                                    </NavigationMenuLink>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+        ))}
+    </NavigationMenuList>
+</NavigationMenu>
+
   );
 }
