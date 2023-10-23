@@ -1,5 +1,9 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+
 
 const AutobiographyPage = () => {
     return (
@@ -19,9 +23,9 @@ const AutobiographyPage = () => {
                         objectFit="cover"
                     />
                 </div>
-                <h1 className="mt-4 text-4xl font-bold text-white">John Doe</h1>
+                <h1 className="mt-4 text-4xl font-bold text-white">Stephen Puthenpurackal</h1>
                 <p className="mt-2 text-xl text-gray-400">
-                    Software Developer | Photographer
+                    Software Developer | Builder
                 </p>
             </motion.div>
 

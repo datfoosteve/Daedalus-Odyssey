@@ -45,14 +45,17 @@ const groupedNavItems = {
     { name: "Homepage", path: "/" },
     { name: "Resume", path: "/resume" },
     { name: "Timeline", path: "/timeline" },
+    { name: "Autobiography", path: "/autobiography" }, // Added Autobiography here
   ],
   Work: [
     { name: "Projects", path: "/projects" },
+    { name: "Portfolio", path: "/portfolio" },         // Added Portfolio here
     { name: "Blog", path: "/blog" },
   ],
   Interact: [
     { name: "Guestbook", path: "/guestbook" },
     { name: "Contact", path: "/contact" },
+    { name: "Services", path: "/services" },           // Added Services here
   ],
 };
 
@@ -66,7 +69,11 @@ export default function Navbar() {
     "/resume",
     "/guestbook",
     "/contact",
+    "/autobiography",     // Added Autobiography here
+    "/portfolio",         // Added Portfolio here
+    "/services",          // Added Services here
   ];
+
   paths.forEach((path) => {
     if (pathname.includes(path)) {
       pathname = path;
